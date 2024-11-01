@@ -19,10 +19,12 @@ const RecentProjects = () => {
             key={item.id}
           >
             <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              title="Check Github"
+              href="https://github.com/ARYPROGRAMMER"
             >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10"
+              onClick={() => window.open("https://github.com/ARYPROGRAMMER", "_blank")}
+              >
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
@@ -65,9 +67,11 @@ const RecentProjects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center"
+                onClick={() => window.open("https://github.com/ARYPROGRAMMER", "_blank")}
+                >
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    View in GitHub
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
