@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { redirect } from "next/navigation";
 
 export const FloatingNav = ({
   navItems,
@@ -43,6 +44,10 @@ export const FloatingNav = ({
     }
   });
 
+  const downloadResume = () => {
+    window.open("/resume.pdf", "_blank");
+  }
+  
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -81,10 +86,14 @@ export const FloatingNav = ({
           </Link>
         ))}
 
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Constantly Updating</span>
+        <button
+          onClick={()=>downloadResume()}
+          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
+        >
+          <span>Download Résumé</span>
+
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> 
+        </button>
       </motion.div>
     </AnimatePresence>
   );

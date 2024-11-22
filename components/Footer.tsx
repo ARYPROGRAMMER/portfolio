@@ -44,7 +44,26 @@ const Footer = () => {
           {socialMedia.map((info) => (
             <div
               key={info.id}
-              onClick={() => window.open("https://www.linkedin.com/in/its-arya/", "_blank")}
+              onClick={() => {
+                if (info.id == 1){
+                  window.open(
+                    "https://github.com/ARYPROGRAMMER",
+                    "_blank"
+                  );
+                }
+
+                else if (info.id == 2) {
+                  window.open("https://x.com/AryaS39909342",
+                     "_blank");
+                }
+
+                else if (info.id == 3) {
+                  window.open(
+                    "https://www.linkedin.com/in/its-arya/",
+                    "_blank"
+                  );
+                }
+              }}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
             >
               <Image src={info.img}  
