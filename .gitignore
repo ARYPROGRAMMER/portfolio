@@ -35,5 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Sentry Config File
-.sentryclirc
+# generated for AI agents by `next dev`
+/AGENTS.md
+/CLAUDE.md
