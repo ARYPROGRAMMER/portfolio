@@ -61,7 +61,7 @@ export default async function Image() {
               lineHeight: 0.86,
               letterSpacing: -5,
               textTransform: "uppercase",
-              color: "#c8ff3d",
+              color: "#4d9dff",
             }}
           >
             Engineer
@@ -80,7 +80,7 @@ export default async function Image() {
           }}
         >
           <span style={{ maxWidth: 700 }}>{profile.disciplineLine}</span>
-          <span style={{ color: "#c8ff3d" }}>aryapratapsingh.xyz</span>
+          <span style={{ color: "#4d9dff" }}>aryapratapsingh.xyz</span>
         </div>
       </div>
     ),

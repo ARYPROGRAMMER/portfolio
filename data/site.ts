@@ -28,20 +28,20 @@ export const profile = {
   resume: "/resume.pdf",
   avatar: "/profile.jpg",
   status: {
-    label: "Open to 2027 new-grad roles",
+    label: "Open to 2027 Openings",
     available: true,
   },
   now: {
     company: "Global Groupware Solutions",
     product: "EmployWise",
-    role: "SDE Intern",
+    role: "Software Engineer Intern",
   },
   /** The oversized lead statement in About. */
   lead: LEAD,
   /** Lead plus current context. Used in the hero and the page metadata. */
   summary: `${LEAD} Currently shipping MyEmployWise 2.0 at Global Groupware Solutions, and finishing a CSE degree at IIIT Ranchi.`,
   bio: [
-    "I'm a final-year CSE student at IIIT Ranchi who spends most of his time shipping production software rather than sitting in lectures. Over the last two years I've worked across four companies — as a full-time engineer, and as an intern — building web products on React and Next.js and mobile clients in Flutter, usually both for the same product.",
+    "I'm a final-year CSE student at IIIT Ranchi who spends most of his time shipping production software rather than sitting in lectures. Over the last two years I've interned at three companies — building web products on React and Next.js and mobile clients in Flutter, usually both for the same product.",
     "The through-line is that I like the whole stack. I'll happily spend a morning cutting a build from minutes to seconds with rspack and swc, and the afternoon getting a Framer-grade interaction to feel right on a mid-range Android. Both jobs are the same job: making something feel fast to the person using it.",
   ],
 } as const;
@@ -95,9 +95,9 @@ export const socials = [
 
 export const navItems = [
   { label: "About", href: "#about", index: "01" },
-  { label: "Work", href: "#work", index: "02" },
-  { label: "Approach", href: "#principles", index: "03" },
-  { label: "Experience", href: "#experience", index: "04" },
+  { label: "Experience", href: "#experience", index: "02" },
+  { label: "Work", href: "#work", index: "03" },
+  { label: "Approach", href: "#principles", index: "04" },
   { label: "Stack", href: "#stack", index: "05" },
   { label: "Signals", href: "#signals", index: "06" },
   { label: "Contact", href: "#contact", index: "07" },
@@ -181,6 +181,6 @@ export const keywords = [
 export const stats = [
   { value: 203, label: "Public repositories", suffix: "" },
   { value: 299, label: "Stars earned", suffix: "" },
-  { value: 4, label: "Companies shipped for", suffix: "" },
+  { value: 3, label: "Companies shipped for", suffix: "" },
   { value: 53, label: "Build time cut", suffix: "%" },
 ] as const;

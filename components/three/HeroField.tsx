@@ -132,14 +132,21 @@ function cssVar(name: string, fallback: string) {
  * and ScrollTrigger, so the whole page runs on one rAF.
  */
 export function HeroField({ className }: { className?: string }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const hostRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const parent = canvas.parentElement;
+    const parent = hostRef.current;
     if (!parent) return;
+
+    // The canvas is created here rather than rendered by React, so every mount
+    // gets a fresh one. A canvas hands out exactly one WebGL context for its
+    // lifetime: a canvas that survives a remount — StrictMode's double effect
+    // in development, or a hot reload of this file — would hand the second
+    // renderer the context the first one just disposed, and the field would
+    // quietly stop drawing until a full page reload.
+    const canvas = document.createElement("canvas");
+    canvas.className = "block size-full";
+    parent.appendChild(canvas);
 
     let renderer: WebGLRenderer;
     try {
@@ -151,6 +158,7 @@ export function HeroField({ className }: { className?: string }) {
       });
     } catch {
       // No WebGL context available — the hero is complete without this.
+      canvas.remove();
       return;
     }
 
@@ -181,7 +189,7 @@ export function HeroField({ className }: { className?: string }) {
       uSize: { value: 2.4 },
       uAspect: { value: 1 },
       uInk: { value: new Color(cssVar("--c-ink", "#f4f4f0")) },
-      uAccent: { value: new Color(cssVar("--c-accent", "#c8ff3d")) },
+      uAccent: { value: new Color(cssVar("--c-accent", "#4d9dff")) },
       uOpacity: { value: 0.85 },
     };
 
@@ -251,7 +259,7 @@ export function HeroField({ className }: { className?: string }) {
     // The palette flips via a class on <html>, so watch that rather than polling.
     const applyColors = () => {
       uniforms.uInk.value.set(cssVar("--c-ink", "#f4f4f0"));
-      uniforms.uAccent.value.set(cssVar("--c-accent", "#c8ff3d"));
+      uniforms.uAccent.value.set(cssVar("--c-accent", "#4d9dff"));
     };
     const themeObserver = new MutationObserver(applyColors);
     themeObserver.observe(document.documentElement, {
@@ -309,14 +317,11 @@ export function HeroField({ className }: { className?: string }) {
       geometry.dispose();
       material.dispose();
       renderer.dispose();
+      canvas.remove();
     };
   }, []);
 
-  return (
-    <div className={className} aria-hidden="true">
-      <canvas ref={canvasRef} className="block size-full" />
-    </div>
-  );
+  return <div ref={hostRef} className={className} aria-hidden="true" />;
 }
 
 export default HeroField;

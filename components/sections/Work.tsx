@@ -24,7 +24,7 @@ export function Work() {
       className="shell relative scroll-mt-24 py-24 md:py-32"
     >
       <SectionHeader
-        index="02"
+        index="03"
         title="Selected work"
         meta="Five projects that show the range — full-stack web, Flutter clients, and developer tooling."
       />

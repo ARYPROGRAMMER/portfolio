@@ -17,7 +17,7 @@ export const principles: Principle[] = [
   {
     id: "fast",
     title: "Fast beats clever",
-    body: "Cutting a build by 53% in my second week was worth more to the team than any feature I could have written that week.",
+    body: "Cutting a build by 53% in my first month was worth more to the team than any feature I could have written in that time.",
   },
   {
     id: "demo",
@@ -27,6 +27,6 @@ export const principles: Principle[] = [
   {
     id: "explain",
     title: "Explain, don't just answer",
-    body: "Building an explanation engine taught me that output nobody can verify is output nobody ends up using.",
+    body: "Building a RAG pipeline taught me that output nobody can trace back to a source is output nobody ends up using.",
   },
 ];

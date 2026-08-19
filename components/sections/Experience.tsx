@@ -24,9 +24,9 @@ export function Experience() {
       className="shell scroll-mt-24 py-24 md:py-32"
     >
       <SectionHeader
-        index="04"
+        index="02"
         title="Experience"
-        meta="Four companies since late 2024 — one as a full-time engineer, three as an intern. Every one remote."
+        meta="Three companies since late 2024, every one remote — web frontends, Flutter clients, and the services behind them."
       />
 
       <ul ref={list} className="mt-14 border-t border-line md:mt-20">

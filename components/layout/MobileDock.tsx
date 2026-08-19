@@ -1,6 +1,13 @@
 "use client";
 
-import { Compass, Layers, Mail, Search, Sparkles, Wrench } from "lucide-react";
+import {
+  Briefcase,
+  Layers,
+  Mail,
+  Search,
+  Sparkles,
+  Wrench,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -8,9 +15,15 @@ import { scrollToSection } from "./LenisProvider";
 import { ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
+/**
+ * Five slots, not seven: the dock is thumb-width, and a sixth label stops
+ * fitting on a small phone. Experience takes the slot Approach used to hold —
+ * it is the section a visitor who is here to hire actually wants — and
+ * Approach stays reachable from the nav and the command palette.
+ */
 const dockItems = [
-  { href: "#work", label: "Work", Icon: Layers },
-  { href: "#principles", label: "Approach", Icon: Compass },
+  { href: "#experience", label: "Work exp", Icon: Briefcase },
+  { href: "#work", label: "Projects", Icon: Layers },
   { href: "#stack", label: "Stack", Icon: Wrench },
   { href: "#signals", label: "Signals", Icon: Sparkles },
   { href: "#contact", label: "Contact", Icon: Mail },

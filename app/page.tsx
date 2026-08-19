@@ -15,9 +15,9 @@ export default function Home() {
       <Hero />
       <Compass />
       <About />
+      <Experience />
       <Work />
       <Principles />
-      <Experience />
       <Stack />
       <Signals />
       <Contact />

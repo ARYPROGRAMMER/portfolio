@@ -70,7 +70,7 @@ export function Principles() {
       <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3 pt-5 md:pt-7">
         <div className="flex items-baseline gap-4 md:gap-6">
           <span className="font-mono text-[11px] tracking-[0.18em] text-accent">
-            (03)
+            (04)
           </span>
           <h2 className="display-lg">How I work</h2>
         </div>

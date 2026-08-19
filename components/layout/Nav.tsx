@@ -24,7 +24,11 @@ export function Nav() {
     const trigger = ScrollTrigger.create({
       start: 24,
       end: "max",
-      onToggle: (self) => setScrolled(self.isActive),
+      // `isActive` is `progress > 0 && progress < 1`, so it goes false again on
+      // the last pixel of the page — which stripped the header's background at
+      // exactly the point it sits over the contact block. Progress 1 is the
+      // bottom of the document, not the top, so it still counts as scrolled.
+      onToggle: (self) => setScrolled(self.isActive || self.progress === 1),
     });
     return () => trigger.kill();
   }, []);
@@ -109,15 +113,6 @@ export function Nav() {
             </span>
             <span className="hidden font-display text-base font-extrabold uppercase tracking-tight lg:block">
               {profile.name}
-            </span>
-            <span
-              className={cn(
-                "size-1.5 rounded-full transition-colors",
-                profile.status.available ? "bg-accent" : "bg-dim",
-              )}
-            />
-            <span className="hidden font-mono text-[11px] uppercase tracking-[0.16em] text-dim transition-colors group-hover:text-ink xl:block">
-              {profile.role}
             </span>
           </button>
 

@@ -29,11 +29,36 @@ const ID = {
   image: `${SITE_URL}/#primaryimage`,
 } as const;
 
-/** ISO date for a "Mon YYYY" string, or undefined when it isn't one. */
+const MONTHS = [
+  "jan",
+  "feb",
+  "mar",
+  "apr",
+  "may",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "oct",
+  "nov",
+  "dec",
+];
+
+/**
+ * ISO month for a "Mon YYYY" string, or undefined when it isn't one.
+ *
+ * Parsed by hand rather than through `Date`: `new Date("1 May 2026")` is a
+ * local-midnight instant, and `toISOString()` then renders it in UTC — which
+ * in any timezone east of Greenwich rolls the date back into the previous
+ * month, so every start and end date in the structured data came out one
+ * month early.
+ */
 function isoMonth(label: string): string | undefined {
-  const parsed = Date.parse(`1 ${label}`);
-  if (Number.isNaN(parsed)) return undefined;
-  return new Date(parsed).toISOString().slice(0, 7);
+  const match = /^([A-Za-z]{3})[a-z]*\.?\s+(\d{4})$/.exec(label.trim());
+  if (!match) return undefined;
+  const month = MONTHS.indexOf(match[1].toLowerCase());
+  if (month < 0) return undefined;
+  return `${match[2]}-${String(month + 1).padStart(2, "0")}`;
 }
 
 /**
