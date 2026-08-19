@@ -47,10 +47,10 @@ export const compassPaths: CompassPath[] = [
     label: "I'm just curious",
     question: "What's he actually like?",
     headline: "Someone who ships on weekends too.",
-    body: "203 public repositories and 299 stars is mostly a record of curiosity — a text-to-video pipeline, realtime diagramming, a mental-health app, a 2D game for a graphics assignment. Most of it started as \"I wonder if this works\".",
+    body: "203 public repositories and 213 stars is mostly a record of curiosity — a text-to-video pipeline, realtime diagramming, a mental-health app, a 2D game for a graphics assignment. Most of it started as \"I wonder if this works\".",
     points: [
       { label: "Repositories", value: "203 public" },
-      { label: "Stars earned", value: "299" },
+      { label: "Stars earned", value: "213" },
       { label: "First commit", value: "December 2020" },
       { label: "Currently learning", value: "Whatever the problem needs" },
     ],

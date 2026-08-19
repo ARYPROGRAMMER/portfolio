@@ -101,11 +101,11 @@ export function Nav() {
           <button
             type="button"
             onClick={() => scrollToSection("#top")}
-            className="group flex items-center gap-3"
+            className="flex items-center"
             aria-label="Back to top"
           >
             {/*
-              Initials while the six nav links are competing for the same row;
+              Initials while the seven nav links are competing for the same row;
               the full name only once there's genuinely room at lg.
             */}
             <span className="font-display text-lg font-extrabold tracking-tight lg:hidden">

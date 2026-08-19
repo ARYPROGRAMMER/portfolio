@@ -175,12 +175,14 @@ export const keywords = [
 ] as const;
 
 /**
- * Snapshot of the GitHub profile, taken 2026-08-14. These are rendered as
- * static figures — refresh them by hand rather than hitting the API on load.
+ * Snapshot of the GitHub profile, taken 2026-08-20 from the REST API. Stars are
+ * the sum over own (non-fork) repositories — forks carry the upstream project's
+ * stars and were never earned here. Rendered as static figures; refresh them by
+ * hand rather than hitting the API on load.
  */
 export const stats = [
   { value: 203, label: "Public repositories", suffix: "" },
-  { value: 299, label: "Stars earned", suffix: "" },
+  { value: 213, label: "Stars earned", suffix: "" },
   { value: 3, label: "Companies shipped for", suffix: "" },
   { value: 53, label: "Build time cut", suffix: "%" },
 ] as const;
